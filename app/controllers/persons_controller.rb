@@ -2,7 +2,7 @@ class PersonsController < ApplicationController
   before_action :set_person, only: %i[show]
 
   def index
-    @persons = Person.all
+    @persons = Person.page(params[:page]).per(8)
   end
 
   def show
