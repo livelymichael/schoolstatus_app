@@ -1,9 +1,19 @@
-<h1>List of People</h1>
+<div class="container mx-auto p-4">  <!-- Centered container with padding -->
+  <h1 class="text-3xl font-bold mb-4">People</h1>  <!-- Large heading with spacing -->
 
-<ul>
-<% @persons.each do |person| %>
-  <li>
-    <%= link_to person.name, person_path(person) %> - <%= person.address %>
-  </li>
-<% end %>
-</ul>
+  <!-- Define a grid for the cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">  <!-- Responsive grid -->
+
+    <!-- Loop through people and create a card for each -->
+    <% @persons.each do |person| %>
+      <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration 300">  <!-- Card styling -->
+        <h2 class="text-xl font-semibold mb-2"><%= person.name %></h2>  <!-- Card title -->
+        <p class="text-gray-700">Address: <%= person.address %></p>  <!-- Card content -->
+
+        <!-- Link to the show page for details -->
+        <%= link_to 'View Details', person_path(person), class: "text-blue-500 hover:underline mt-4 inline-block" %>
+      </div>
+    <% end %>
+
+  </div>
+</div>
