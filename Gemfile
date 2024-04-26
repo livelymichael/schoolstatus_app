@@ -44,6 +44,9 @@ gem 'kaminari'
 # For styling
 gem 'tailwindcss-rails'
 
+# HTTP client for making API requests
+gem 'faraday'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 

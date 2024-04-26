@@ -1,19 +1,17 @@
-<div class="container mx-auto p-4">  <!-- Centered container with padding -->
+<div class="container mx-auto p-4">
   <h1 class="text-3xl font-bold mb-4">List of People</h1>
 
-  <!-- Display the paginated list of people as cards -->
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">  <!-- Responsive grid layout -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <% @persons.each do |person| %>
-      <div class="bg-white p-6 rounded-lg shadow-lg">  <!-- Card-like styling -->
-        <h2 class="text-xl font-semibold mb-2"><%= person.name %></h2>  <!-- Card title -->
-        <p class="text-gray-700">Address: <%= person.address %></p>  <!-- Card content -->
-        <%= link_to 'View Details', person_path(person), class: "text-blue-500 hover:underline mt-4 inline-block" %>  <!-- Styled link -->
+      <div class="bg-white p-6 rounded-lg shadow-lg">
+        <h2 class="text-xl font-semibold mb-2"><%= person.name %></h2>
+        <p class="text-gray-700">Address: <%= person.address %></p>
+        <%= link_to 'View Details', person_path(person), class: "text-blue-500 hover:underline mt-4 inline-block" %>
       </div>
     <% end %>
   </div>
 
-  <!-- Pagination controls -->
-  <div class="mt-6 flex justify-center">  <!-- Center the pagination controls -->
-    <%= paginate @persons, theme: 'tailwind' %>  <!-- Kaminari's pagination controls -->
+  <div class="mt-6 flex justify-center">
+    <%= paginate @persons, theme: 'tailwind' %>
   </div>
 </div>

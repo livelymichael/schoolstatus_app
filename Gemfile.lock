@@ -101,6 +101,10 @@ GEM
       reline (>= 0.3.8)
     drb (2.2.1)
     erubi (1.12.0)
+    faraday (2.7.4)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (3.0.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.4)
@@ -211,6 +215,7 @@ GEM
     reline (0.5.3)
       io-console (~> 0.5)
     rexml (3.2.6)
+    ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
     selenium-webdriver (4.19.0)
       base64 (~> 0.2)
@@ -261,6 +266,7 @@ DEPENDENCIES
   bootsnap
   capybara
   debug
+  faraday
   importmap-rails
   jbuilder
   kaminari
