@@ -26,7 +26,6 @@ class CSVReader
   end
 
   def handle_error(error)
-    puts "Error message: #{e.message}"
     @logger.error("Error: #{error.message}")
   end
 end

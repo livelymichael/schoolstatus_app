@@ -3,9 +3,8 @@ require_relative 'csv_reader'
 class PersonCSVLoader < CSVReader
   def process_row(row)
     begin
-      puts row['last_name']
       Person.create!(
-        name: row['first_name'] + row['last_name'],
+        name: row['first_name']&.concat(row['last_name']),
         address: row['address']
       )
     rescue ActiveRecord::RecordInvalid => e
